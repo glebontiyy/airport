@@ -10,7 +10,7 @@
         <Grid Margin="0,0,0,356" Background="AliceBlue">
             <Label Content="Аэропорт" HorizontalAlignment="Center" VerticalAlignment="Center" Width="344" HorizontalContentAlignment="Center" FontSize="24" FontFamily="Cooper Black" FontStretch="Normal" FontStyle="Normal"/>
         </Grid>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,78,0,0"/>
+        <ListBox x:Name="ListPlanes" Margin="0,78,0,0" SelectionChanged="ListPlanes_SelectionChanged"/>
 
     </Grid>
 </Window>

@@ -19,9 +19,26 @@ namespace airport.frames
     /// </summary>
     public partial class UserWindow : Window
     {
+        
         public UserWindow()
         {
             InitializeComponent();
+            data.Database database = new data.Database();
+            List<objects.Airplane> airplanes = database.SelectAllPlanes();
+            
+            foreach(objects.Airplane airplane in airplanes)
+            {
+                ListPlanes.Items.Add($"Id самолета - {airplane.GetId}. Тип самолета - {airplane.GetTypePlane}." +
+                    $" Число мест - {airplane.GetSeats}. Число свободных мест - {airplane.GetEmptySeats}. Дата вылета - {airplane.GetDateArroving}.");
+            }
+            
+
+        }
+
+        private void ListPlanes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            frames.PlaceToAirplane placeToAirplane = new PlaceToAirplane(ListPlanes.SelectedIndex + 1);
+            placeToAirplane.Show();
         }
     }
 }
