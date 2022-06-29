@@ -26,6 +26,6 @@ namespace airport.objects
         public int GetSeats { get { return seats; } }
         public int GetEmptySeats { get { return empty_seats; } }
         public string GetTypePlane { get { return type_plane; } }
-        public string GetDateArroving { get { return type_plane; } }
+        public string GetDateArroving { get { return date_arroving; } }
     }
 }
