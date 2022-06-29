@@ -22,7 +22,14 @@ namespace airport.frames
         public PlaceToAirplane(int id_airplane)
         {
             InitializeComponent();
-            Places.Items.Add($"{id_airplane}");
+            data.Database database = new data.Database();
+            List<objects.Place> places = database.GetPlaceToAirplane(id_airplane);
+            foreach(objects.Place place in places)
+            {
+                Places.Items.Add($"Id самолета - {place.GetId}. Пункт прибытия - {place.GetPlace}. Время вылета {place.GetTimeStart}" +
+                    $". Время в полете - {place.GetTimeFlying}. Время прибытия - {place.GetTimeEnd}. Цена билета - {place.GetTicketPrice}");
+            }
+        
         }
 
     }

@@ -6,21 +6,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:airport.frames"
         mc:Ignorable="d"
-        Title="AdminPanel" Height="450" Width="800">
+        Title="AdminPanel" Height="450" Width="1200">
     <Grid Background="Aqua">
         <Grid Margin="0,0,0,356" Background="AliceBlue">
             <Label Content="Аэропорт" HorizontalAlignment="Center" VerticalAlignment="Center" Width="344" HorizontalContentAlignment="Center" FontSize="24" FontFamily="Cooper Black" FontStretch="Normal" FontStyle="Normal"/>
+            <Label x:Name="index_selection" Content="" HorizontalAlignment="Left" Margin="300,42,0,0" VerticalAlignment="Top"/>
         </Grid>
-        <Button Content="Добавить рейс" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="217" />
-        <Button Content="Удалить рейс" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" Width="217"/>
+        <Button Content="Добавить рейс" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="217" Click="AddPlace"/>
+        <Button Content="Удалить рейс" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" Width="217" Click="DeletePlace"/>
         <Button Content="Изменить рейс" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Width="217" />
         <Button Content="Просмотреть рейсы" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Width="217"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="232,78,0,0" HorizontalAlignment="Left" Width="568"/>
-        <TextBox TextWrapping="WrapWithOverflow"  Margin="10,158,573,217" materialDesign:HintAssist.Hint="ID самолета" Foreground="Black"/>
-        <TextBox TextWrapping="WrapWithOverflow"  Margin="10,217,573,166" materialDesign:HintAssist.Hint="Пункт назначения" Foreground="Black" TextChanged="TextBox_TextChanged_1"/>
-        <TextBox TextWrapping="WrapWithOverflow"  Margin="10,326,573,61" materialDesign:HintAssist.Hint="Время вылета" Foreground="Black"/>
-        <TextBox TextWrapping="WrapWithOverflow" Margin="10,268,573,113" materialDesign:HintAssist.Hint="Время в полете" Foreground="Black"/>
-        <TextBox TextWrapping="WrapWithOverflow"  Margin="10,350,573,33" materialDesign:HintAssist.Hint="Время прибытия" Foreground="Black"/>
-        <TextBox TextWrapping="WrapWithOverflow"  Margin="10,378,573,5" materialDesign:HintAssist.Hint="Цена билета" Foreground="Black"/>
+        <ListBox x:Name="airport_events" Margin="300,78,0,0" HorizontalAlignment="Left" Width="890" SelectionChanged="airport_events_SelectionChanged"/>
+        <TextBox x:Name="id_airplane" TextWrapping="WrapWithOverflow"  Margin="10,158,900,217" materialDesign:HintAssist.Hint="ID самолета" Foreground="Black" materialDesign:HintAssist.HelperText="Id самолета"/>
+        <TextBox x:Name="place" TextWrapping="WrapWithOverflow"  Margin="10,217,900,166" materialDesign:HintAssist.Hint="Пункт назначения" Foreground="Black" materialDesign:HintAssist.HelperText="Пункт назначения"/>
+        <TextBox x:Name="time_flying" TextWrapping="WrapWithOverflow"  Margin="10,326,900,61" materialDesign:HintAssist.Hint="Время вылета" Foreground="Black" />
+        <TextBox x:Name="time_start" TextWrapping="WrapWithOverflow" Margin="10,268,900,113" materialDesign:HintAssist.Hint="Время в полете" Foreground="Black" />
+        <TextBox x:Name="time_end" TextWrapping="WrapWithOverflow"  Margin="10,350,900,33" materialDesign:HintAssist.Hint="Время прибытия" Foreground="Black" />
+        <TextBox x:Name="ticket_price" TextWrapping="WrapWithOverflow"  Margin="10,378,900,5" materialDesign:HintAssist.Hint="Цена билета" Foreground="Black" />
     </Grid>
 </Window>
